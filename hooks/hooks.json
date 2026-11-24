@@ -1,0 +1,39 @@
+{
+  "description": "slopnuke edited-file tracking and sweep loop for Claude Code and Codex.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/slopnuke.ts\" hook edit",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/slopnuke.ts\" hook prompt",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/slopnuke.ts\" hook stop",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

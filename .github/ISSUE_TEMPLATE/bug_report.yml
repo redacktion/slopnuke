@@ -1,0 +1,138 @@
+name: Bug report
+description: Report broken slopnuke behavior, install problems or wrong output
+title: "[Bug]: "
+labels: ["bug"]
+assignees: "redacktion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is for problems that you can reproduce in the sweep loop, the hooks, the review form, file discovery, config, install or the docs. For a finding that is wrong or for bad rewrite advice, the rule report form fits better.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A short description of the bug.
+      placeholder: "Example: /slopnuke-md prints done, but a rescan of the same file shows findings."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Sweep loop and hooks
+        - Review form
+        - File discovery and ignore globs
+        - Config and profiles
+        - Comment extraction
+        - Code strings and test names
+        - Install and runtime
+        - Pi extension
+        - Claude Code plugin
+        - Codex plugin
+        - Documentation
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: slopnuke version
+      description: The version in package.json, or the commit that you installed.
+      placeholder: "0.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: host
+    attributes:
+      label: Host and version
+      placeholder: "Example: Claude Code 2.1.0, Codex CLI 0.50.0 or Pi 0.30.0"
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: The output of node --version.
+      placeholder: "v24.0.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence of commands that shows the bug.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Command output
+      description: The slopnuke output, errors or hook messages.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Config files
+      description: The contents of .slopnuke.json in the repo and ~/.slopnuke/config.json, if either exists.
+      render: json
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I can reproduce this with the latest release.
+          required: true
+        - label: This report includes the exact command and its output.
+          required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false

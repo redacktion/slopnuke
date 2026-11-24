@@ -1,0 +1,74 @@
+name: Feature request
+description: Suggest a rule, a scope or a change to the sweep loop
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: "redacktion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. This form is for new rules, new scopes, config keys, host support and changes to the sweep loop or the review form.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: The writing pattern or workflow friction behind the request.
+      placeholder: "Example: Agents write 'This ensures that' in commit messages, and no scope covers commit messages."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      placeholder: "Example: Add a /slopnuke-commits scope that lints the messages of unpushed commits."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      options:
+        - New rule or rule change
+        - New scope
+        - Config and profiles
+        - Sweep loop and hooks
+        - Review form
+        - Host support
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example text
+      description: Sentences that the feature should flag, and sentences that it should leave alone.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: A test with hand-written expected values can verify this request.
+          required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false

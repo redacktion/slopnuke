@@ -1,0 +1,59 @@
+name: Host support request
+description: Request slopnuke support for another coding agent or editor
+title: "[Host]: "
+labels: ["enhancement"]
+assignees: "redacktion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        slopnuke runs as a Pi extension and as a Claude Code and Codex plugin. This form is for another agent host.
+
+  - type: input
+    id: host
+    attributes:
+      label: Host name
+      placeholder: "Example: Example Agent CLI"
+    validations:
+      required: true
+
+  - type: input
+    id: homepage
+    attributes:
+      label: Documentation URL
+      placeholder: "https://example.com/docs"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extension
+    attributes:
+      label: Extension surface
+      description: The plugin, skill, hook or extension system of the host.
+      placeholder: "Example: The host loads skills from a folder and runs a command after each turn."
+    validations:
+      required: true
+
+  - type: textarea
+    id: loop
+    attributes:
+      label: Loop support
+      description: The way the host can keep the agent working until a rescan is clean, such as a stop hook or a goal command.
+    validations:
+      required: false
+
+  - type: textarea
+    id: elicitation
+    attributes:
+      label: Form support
+      description: Whether the host supports MCP elicitation forms or another way to ask the user a question.
+    validations:
+      required: false
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      placeholder: "Example: Run /slopnuke-md in the host on a repo with one flagged file, then confirm the loop ends with slopnuke: done."
+    validations:
+      required: false

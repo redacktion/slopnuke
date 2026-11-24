@@ -1,0 +1,86 @@
+name: Rule report
+description: Report a wrong finding, a missed pattern or rewrite advice that makes the text worse
+title: "[Rule]: "
+labels: ["rules"]
+assignees: "redacktion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        slopnuke judges every rule by one test: a sentence that a person would not say out loud in normal conversation is wrong. This form is for a rule that fails that test in either direction.
+
+  - type: input
+    id: rule
+    attributes:
+      label: Rule id
+      description: The rule id from the finding, such as slopnuke/island-sentence or reader-first/sentence-load.
+      placeholder: "slopnuke/inanimate-subject"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Report type
+      options:
+        - False positive
+        - Missed pattern
+        - Bad rewrite advice
+        - Two rules in conflict
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Markdown
+        - Code comments
+        - Code strings and names
+        - Test names
+    validations:
+      required: true
+
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Profile
+      options:
+        - standard
+        - actor-first
+    validations:
+      required: true
+
+  - type: textarea
+    id: text
+    attributes:
+      label: Flagged text
+      description: The exact text, with a sentence or two around it.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding output
+      description: The finding line and message that slopnuke printed.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: spoken
+    attributes:
+      label: Spoken version
+      description: The way a person would say the same thing out loud.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false

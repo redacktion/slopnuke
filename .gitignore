@@ -1,0 +1,23 @@
+# Dependencies and build output
+node_modules/
+coverage/
+*.tgz
+
+# Agent and editor state
+.claude/
+.codex/
+.cursor/
+.windsurf/
+.aider*
+.vscode/
+.idea/
+CLAUDE.local.md
+
+# Secrets and logs
+.env
+.env.*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

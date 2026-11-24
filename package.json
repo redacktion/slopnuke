@@ -1,0 +1,38 @@
+{
+  "name": "slopnuke",
+  "version": "0.4.0",
+  "description": "Pi extension and Claude Code and Codex plugin that makes the agent rewrite AI slop that SlopSift finds in the code comments, markdown, code strings and test names of a repo.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redacktion/slopnuke.git"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-coding-agent",
+    "claude-code-plugin",
+    "codex-plugin",
+    "slopsift",
+    "linting"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test core/*.test.ts scripts/*.test.ts"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/slopnuke.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "dependencies": {
+    "slopsift": "^0.11.0"
+  }
+}

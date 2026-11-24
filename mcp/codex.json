@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "slopnuke": {
+      "command": "node",
+      "cwd": ".",
+      "args": [
+        "scripts/slopnuke.ts",
+        "mcp"
+      ]
+    }
+  }
+}

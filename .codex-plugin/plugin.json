@@ -1,0 +1,31 @@
+{
+  "name": "slopnuke",
+  "version": "0.4.0",
+  "description": "Sweep a repo's code comments, markdown, code strings and test names for AI writing slop with SlopSift, and have the agent rewrite each finding until a rescan is clean.",
+  "author": {
+    "name": "redacktion"
+  },
+  "homepage": "https://github.com/redacktion/slopnuke",
+  "repository": "https://github.com/redacktion/slopnuke",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "linting",
+    "slopsift",
+    "hooks"
+  ],
+  "interface": {
+    "displayName": "slopnuke",
+    "shortDescription": "Rewrite AI slop until a rescan is clean.",
+    "longDescription": "slopnuke runs SlopSift on the code comments, markdown, code strings and test names of a repo, or on edited files, hands the findings to Codex as a rewrite task, and rescans until the files are clean or the findings stop dropping.",
+    "developerName": "redacktion",
+    "category": "Productivity",
+    "capabilities": [
+      "Stop hook",
+      "local prose linting",
+      "edited-file tracking"
+    ],
+    "defaultPrompt": "Use $slopnuke:slopnuke to clean AI slop out of the comments and markdown in this repo."
+  },
+  "mcpServers": "./mcp/codex.json"
+}
